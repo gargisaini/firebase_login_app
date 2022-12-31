@@ -159,20 +159,25 @@ class SignUpPage extends StatelessWidget {
                 fontSize: 15,
               ),
           ),),
-          Wrap(
-            children: List<Widget>.generate(3, (index) {
-              return CircleAvatar(
-                radius: 38,
-                backgroundColor: Colors.white,
-                child: CircleAvatar(
-                  radius: 22,
-                  backgroundImage: AssetImage(
-                    "img/"+images[index],
-                  ),
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.signInWithGoogle();
+            },
+            child: Wrap(
+              children: List<Widget>.generate(3, (index) {
+                return CircleAvatar(
+                  radius: 38,
+                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    radius: 22,
+                    backgroundImage: AssetImage(
+                      "img/"+images[index],
+                    ),
 
-                ),
-              );
-            }),
+                  ),
+                );
+              }),
+            ),
           ),
 
 

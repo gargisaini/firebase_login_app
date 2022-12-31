@@ -3,6 +3,7 @@ import 'package:firebase_login_app/login_page.dart';
 import 'package:firebase_login_app/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends GetxController{
   // So the auth controller can be acces through globly becox we want every page to have auth acces
@@ -31,6 +32,19 @@ class AuthController extends GetxController{
     }else{
       Get.offAll(()=>WelcomePage(email:user.email));
     }
+  }
+
+  signInWithGoogle() async {
+    final GoogleSignInAccount? googleuser = await GoogleSignIn(
+      scopes: <String>["email"]).signIn();
+     final GoogleSignInAuthentication googleAuth = await googleuser!.authentication;
+
+     final credential = GoogleAuthProvider.credential(
+       accessToken: googleAuth.accessToken,
+       idToken: googleAuth.idToken,
+     );
+
+     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   void register(String email,password) async {
