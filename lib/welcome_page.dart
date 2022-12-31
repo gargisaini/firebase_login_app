@@ -1,7 +1,9 @@
+import 'package:firebase_login_app/auth_controller.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  String? email;
+  WelcomePage({Key? key,required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class WelcomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black54,
                 ),),
-                Text("a@a.com",style: TextStyle(
+                Text(email!,style: TextStyle(
                   fontSize: 20,
                   color: Colors.grey[500],
                 ),),
@@ -50,21 +52,26 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 150,),
-          Container(
-            width: w*0.4,
-            height:h*0.08,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: DecorationImage(image: AssetImage("img/loginbtn.png"),
-                  fit: BoxFit.cover),
-            ),
-            alignment: Alignment.center,
-            child: Text("Sign Out",style: TextStyle(
-              fontSize: 25,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),),
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.logOut();
+            },
+            child: Container(
+              width: w*0.4,
+              height:h*0.08,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(image: AssetImage("img/loginbtn.png"),
+                    fit: BoxFit.cover),
+              ),
+              alignment: Alignment.center,
+              child: Text("Sign Out",style: TextStyle(
+                fontSize: 25,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),),
 
+            ),
           ),
 
   ]));

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "858908920691",
+    "project_id": "fir-getx-app-df179",
+    "storage_bucket": "fir-getx-app-df179.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858908920691:android:f7405cf72ac70bfae29306",
+        "android_client_info": {
+          "package_name": "com.example.firebase_login_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858908920691-78uv5k92eiv6p88tg124j0opdveslu99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnLKt2EQVZLpJIrUqVeJa92Zk6Np3hv28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858908920691-78uv5k92eiv6p88tg124j0opdveslu99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
